@@ -32,43 +32,26 @@ public class MainActivity extends Activity {
         text = (TextView) findViewById(R.id.cTextView);
         iv_msg = (ImageView) findViewById(R.id.iv_msg);
         text.setText(TextDemo);
+
         builder = new SpannableStringBuilder(text.getText().toString());
         redSpan = new ForegroundColorSpan(Color.rgb(255, 255, 255));
-        Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
-        shake.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                Log.e("onAnimationEnd", "onAnimationEnd");
-
-                new Thread() {
-                    public void run() {
-                        try {
-                            charArrays = TextDemo.toCharArray();
-                            for (int i = 0; i <= charArrays.length; i++) {
-                                builder.setSpan(redSpan, 0, i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        new Thread() {
+            public void run() {
+                try {
+                    charArrays = TextDemo.toCharArray();
+                    for (int i = 0; i <= charArrays.length; i++) {
+                        builder.setSpan(redSpan, 0, i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 //                        len = charArrays[i] + "";
-                                handler.sendEmptyMessage(UI);
-                                sleep(200);
-                            }
-                            handler.sendEmptyMessage(UIEND);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        handler.sendEmptyMessage(UI);
+                        sleep(200);
                     }
-                }.start();
+                    handler.sendEmptyMessage(UIEND);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+        }.start();
 
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        findViewById(R.id.iv_msg).startAnimation(shake);
 
 
     }
@@ -83,7 +66,27 @@ public class MainActivity extends Activity {
                     text.setText(builder);
                     break;
                 case UIEND:
-                    Log.e("UIEND", "结束打印");
+                    Animation shake = AnimationUtils.loadAnimation(MainActivity.this, R.anim.shake);
+                    shake.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            Log.e("onAnimationEnd", "onAnimationEnd");
+
+
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
+                    iv_msg.setImageResource(R.mipmap.daxie_normal);
+                    iv_msg.startAnimation(shake);
                     break;
 
                 default:
