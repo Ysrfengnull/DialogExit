@@ -23,6 +23,8 @@
     <ImageView
         android:id="@+id/iv_msg"
         android:layout_width="wrap_content"
+        android:visibility="invisible"
+        android:src="@mipmap/daxie_normal"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cTextView"
         android:layout_centerHorizontal="true"
