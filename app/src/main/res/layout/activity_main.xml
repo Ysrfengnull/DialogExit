@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/rl_base"
     android:layout_height="match_parent"
     tools:context="com.ysr.dialogexit.MainActivity">
 
@@ -12,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="37dp"
         android:layout_marginRight="36dp"
-        android:layout_marginTop="171dp"
         android:ellipsize="none"
         android:gravity="center"
         android:maxLines="2"
@@ -23,11 +23,24 @@
     <ImageView
         android:id="@+id/iv_msg"
         android:layout_width="wrap_content"
-        android:visibility="invisible"
-        android:src="@mipmap/daxie_normal"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/daxie_normal" />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/giv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_msg"
+        android:layout_centerHorizontal="true" />
+<TextView
+    android:id="@+id/tvEnd"
+    android:layout_width="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:text="111"
+    android:layout_height="wrap_content" />
 </RelativeLayout>
