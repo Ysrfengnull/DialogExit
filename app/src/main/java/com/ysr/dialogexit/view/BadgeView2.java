@@ -1,4 +1,4 @@
-package com.ysr.dialogexit;
+package com.ysr.dialogexit.view;
 
 import android.content.Context;
 import android.content.res.Resources;
