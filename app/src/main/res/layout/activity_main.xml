@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/rl_base"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ysr.dialogexit.MainActivity">
 
@@ -36,11 +36,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_msg"
         android:layout_centerHorizontal="true" />
-<TextView
-    android:id="@+id/tvEnd"
-    android:layout_width="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentRight="true"
-    android:text="111"
-    android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="111" />
 </RelativeLayout>

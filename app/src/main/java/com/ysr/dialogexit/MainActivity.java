@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Path;
@@ -22,6 +23,8 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.ysr.dialogexit.view.BadgeView;
 
 import java.io.IOException;
 
@@ -103,7 +106,6 @@ public class MainActivity extends Activity {
                         public void onAnimationEnd(Animation animation) {
                             Log.e("onAnimationEnd", "onAnimationEnd");
                             handler.sendEmptyMessage(PLAYGIF);
-
                         }
 
                         @Override
@@ -237,7 +239,7 @@ public class MainActivity extends Activity {
 //                new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
 //                        RelativeLayout.LayoutParams.WRAP_CONTENT);
         RelativeLayout.LayoutParams params =
-                new RelativeLayout.LayoutParams(iv_msg.getDrawable().getMinimumWidth()/2,iv_msg.getDrawable().getMinimumHeight()/2);
+                new RelativeLayout.LayoutParams(iv_msg.getDrawable().getMinimumWidth() / 2, iv_msg.getDrawable().getMinimumHeight() / 2);
 //        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
 //        params.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
         params.addRule(RelativeLayout.CENTER_IN_PARENT);
@@ -283,6 +285,11 @@ public class MainActivity extends Activity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Log.e("wangcheng", "animation结束");
+                BadgeView badgeView = new BadgeView(mContext);
+                badgeView.setTargetView(tvEnd);
+                badgeView.setText("");
+                startActivity(new Intent(MainActivity.this, MainLookActivity.class));
+//                badgeView.hide();
             }
 
             @Override

@@ -11,10 +11,11 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.FrameLayout;
+import android.widget.FrameLayout.LayoutParams;
 import android.widget.TabWidget;
 import android.widget.TextView;
-import android.widget.FrameLayout.LayoutParams;
 
 
 /**
@@ -43,18 +44,15 @@ public class BadgeView extends TextView {
     private void init() {
         if (!(getLayoutParams() instanceof LayoutParams)) {
             LayoutParams layoutParams =
-                    new LayoutParams(
-                            android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
-                            android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
-                            Gravity.RIGHT | Gravity.TOP);
+                    new LayoutParams(8,8,Gravity.RIGHT | Gravity.TOP);
             setLayoutParams(layoutParams);
         }
 
         // set default font
-        setTextColor(Color.WHITE);
+        setTextColor(Color.RED);
         setTypeface(Typeface.DEFAULT_BOLD);
-        setTextSize(TypedValue.COMPLEX_UNIT_SP, 11);
-        setPadding(dip2Px(5), dip2Px(1), dip2Px(5), dip2Px(1));
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);
+        setPadding(dip2Px(1), dip2Px(1), dip2Px(1), dip2Px(1));
 
         // set default background
         setBackground(9, Color.parseColor("#d3321b"));
@@ -81,6 +79,18 @@ public class BadgeView extends TextView {
      */
     public boolean isHideOnNull() {
         return mHideOnNull;
+    }
+
+    private void hide(boolean animate, Animation anim) {
+        this.setVisibility(View.GONE);
+        if (animate) {
+            this.startAnimation(anim);
+        }
+        mHideOnNull = false;
+    }
+
+    public void hide() {
+        hide(false, null);
     }
 
     /**

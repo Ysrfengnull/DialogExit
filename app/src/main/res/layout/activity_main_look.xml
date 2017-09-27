@@ -1,9 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ysr.dialogexit.utils.precent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#dadada"
     android:layout_height="match_parent"
     tools:context="com.ysr.dialogexit.MainLookActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <com.ysr.dialogexit.utils.precent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvEnd"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="25645564564654654"
+            app:layout_heightPercent="10%"
+            app:layout_marginLeftPercent="2%"
+            app:layout_marginRightPercent="2%"
+            app:layout_marginTopPercent="20%"
+            app:layout_widthPercent="100%" />
+
+    </com.ysr.dialogexit.utils.precent.PercentRelativeLayout>
+
+    <com.ysr.dialogexit.utils.precent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ysr.dialogexit.utils.precent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/back_read_letter"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="3%"
+            app:layout_marginRightPercent="3%"
+            app:layout_marginTopPercent="5%">
+
+            <TextView
+                android:id="@+id/top_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="你好，张三！"
+                android:textSize="15dp"
+                app:layout_marginLeftPercent="8%"
+                app:layout_marginRightPercent="8%"
+                app:layout_marginTopPercent="8%"
+                app:layout_widthPercent="100%" />
+
+            <TextView
+                android:id="@+id/content_letter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/honorific_title"
+                android:layout_below="@+id/top_title"
+                android:scrollbars="none"
+                android:text="        谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢谢谢你帮助我谢"
+                android:textSize="13dp"
+                app:layout_marginBottomPercent="2%"
+                app:layout_marginLeftPercent="8%"
+                app:layout_marginRightPercent="8%"
+                app:layout_widthPercent="100%" />
+
+            <TextView
+                android:id="@+id/honorific_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/end_title"
+                android:text="此致敬礼"
+                android:textSize="13dp"
+                app:layout_marginLeftPercent="8%" />
+
+            <TextView
+                android:id="@+id/end_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/create_time"
+                android:layout_alignParentRight="true"
+                android:text="卡友李四"
+                android:textSize="13dp"
+                app:layout_marginRightPercent="8%" />
+
+            <TextView
+                android:id="@+id/create_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="2013-03-03"
+                android:textSize="13dp"
+                app:layout_marginBottomPercent="20%"
+                app:layout_marginRightPercent="8%" />
+        </com.ysr.dialogexit.utils.precent.PercentRelativeLayout>
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/close_letter"
+            app:layout_heightPercent="8%"
+            app:layout_marginBottomPercent="1%" />
+    </com.ysr.dialogexit.utils.precent.PercentRelativeLayout>
+
+</com.ysr.dialogexit.utils.precent.PercentFrameLayout>

@@ -33,7 +33,7 @@ public class BadgeView2 extends TextView {
     public static final int POSITION_BOTTOM_LEFT = 3;
     public static final int POSITION_BOTTOM_RIGHT = 4;
     public static final int POSITION_CENTER = 5;
-    public static boolean needShow = false;
+    public static boolean needShow = true;
 
     private static final int DEFAULT_MARGIN_DIP = 5;
     private static final int DEFAULT_LR_PADDING_DIP = 5;
@@ -184,7 +184,7 @@ public class BadgeView2 extends TextView {
             default:
                 needShow = true;
                 if (index > 99) {
-                    setText("...", BufferType.NORMAL);
+                    setText("·", BufferType.NORMAL);
                 } else {
                     setText(String.valueOf(index), BufferType.NORMAL);
                 }
