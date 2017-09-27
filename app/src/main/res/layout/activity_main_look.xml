@@ -3,32 +3,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#dadada"
     android:layout_height="match_parent"
+    android:background="#dadada"
     tools:context="com.ysr.dialogexit.MainLookActivity">
+
+    <com.ysr.dialogexit.utils.precent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_thank_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="none"
+            android:gravity="center"
+            android:hint="恭喜恭喜恭喜恭喜恭喜恭喜恭喜恭喜恭喜恭喜恭喜恭喜恭喜恭喜"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:text="恭喜您，收到一封感谢信"
+            android:textSize="16dp"
+            app:layout_marginLeftPercent="2%"
+            app:layout_marginRightPercent="2%"
+            app:layout_marginTopPercent="15%"
+            app:layout_widthPercent="100%" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_thankImg_gif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_thank_title"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerInside"
+            android:src="@mipmap/daxie_normal"
+            app:layout_marginLeftPercent="2%"
+            app:layout_marginRightPercent="2%"
+            app:layout_marginTopPercent="4%" />
+
+        <com.ysr.dialogexit.utils.precent.PercentRelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignEnd="@+id/iv_thankImg_gif"
+            android:layout_alignLeft="@+id/iv_thankImg_gif"
+            android:layout_alignRight="@+id/iv_thankImg_gif"
+            android:layout_alignStart="@+id/iv_thankImg_gif"
+            android:layout_below="@+id/iv_thankImg_gif"
+            app:layout_heightPercent="10%"
+            app:layout_marginTopPercent="4%"
+            app:layout_widthPercent="100%">
+
+            <Button
+                android:id="@+id/out_letter"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/thank_btn_exit"
+                android:text="放入信箱"
+                android:textColor="#EB5E3B"
+                android:textSize="16dp"
+                app:layout_heightPercent="100%"
+                app:layout_widthPercent="30%" />
+
+            <Button
+                android:id="@+id/look_letter"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/thank_btn_look"
+                android:text="立即查看"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_heightPercent="100%"
+                app:layout_widthPercent="30%" />
+        </com.ysr.dialogexit.utils.precent.PercentRelativeLayout>
+    </com.ysr.dialogexit.utils.precent.PercentRelativeLayout>
 
     <com.ysr.dialogexit.utils.precent.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone">
-
-        <TextView
-            android:id="@+id/tvEnd"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:text="25645564564654654"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="2%"
-            app:layout_marginRightPercent="2%"
-            app:layout_marginTopPercent="20%"
-            app:layout_widthPercent="100%" />
-
-    </com.ysr.dialogexit.utils.precent.PercentRelativeLayout>
-
-    <com.ysr.dialogexit.utils.precent.PercentRelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <com.ysr.dialogexit.utils.precent.PercentRelativeLayout
             android:layout_width="match_parent"

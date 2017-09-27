@@ -5,6 +5,8 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Path;
@@ -61,6 +63,8 @@ public class MainActivity extends Activity {
         giv = (GifImageView) findViewById(R.id.giv);
         rl_base = (RelativeLayout) findViewById(R.id.rl_base);
         text.setText(TextDemo);
+        String[] values = new String[3];
+
 
         builder = new SpannableStringBuilder(text.getText().toString());
         redSpan = new ForegroundColorSpan(Color.rgb(255, 255, 255));
@@ -306,6 +310,30 @@ public class MainActivity extends Activity {
 
     }
 
+    public void setSharedPreference(String key, String[] values) {
+        String regularEx = "#";
+        String str = "";
+        SharedPreferences sp = mContext.getSharedPreferences("data", Context.MODE_PRIVATE);
+        if (values != null && values.length > 0) {
+            for (String value : values) {
+                str += value;
+                str += regularEx;
+            }
+            Editor et = sp.edit();
+            et.putString(key, str);
+            et.commit();
+        }
+    }
+    public String[] getSharedPreference(String key) {
+        String regularEx = "#";
+        String[] str = null;
+        SharedPreferences sp = mContext.getSharedPreferences("data", Context.MODE_PRIVATE);
+        String values;
+        values = sp.getString(key, "");
+        str = values.split(regularEx);
+
+        return str;
+    }
     @Override
     protected void onResume() {
         super.onResume();

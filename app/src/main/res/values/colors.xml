@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <!--dialog背景-->
     <color name="BlackTransparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
 </resources>
