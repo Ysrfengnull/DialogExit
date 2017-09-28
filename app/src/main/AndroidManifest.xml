@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainLookActivity"></activity>
+        <activity
+            android:name=".MainLookActivity"
+            android:theme="@style/DialogAcitivityStyle"></activity>
     </application>
 
 </manifest>
