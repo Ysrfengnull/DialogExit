@@ -6,4 +6,7 @@
     <!--dialog背景-->
     <color name="BlackTransparent">#00000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="shadow">#c4c0c0</color>
+    <color name="Red_800">#ffb93221</color>
 </resources>
