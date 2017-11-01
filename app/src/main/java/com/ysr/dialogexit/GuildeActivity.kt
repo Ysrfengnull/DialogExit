@@ -37,7 +37,7 @@ class GuildeActivity : AppCompatActivity() {
                 .setShape(GuideView.MyShape.CIRCULAR)   // 设置圆形显示区域，
                 .setBgColor(resources.getColor(R.color.shadow))
                 .setOnclickListener {
-                    if (type == 3) {
+                    if (type == 4) {
                         guideView!!.hide()
                     } else {
                         var i = type + 1
@@ -107,7 +107,7 @@ class GuildeActivity : AppCompatActivity() {
             1 -> GuideView.Direction.LEFT_TOP
             2 -> GuideView.Direction.LEFT_BOTTOM
             3 -> GuideView.Direction.LEFT_TOP
-            4 -> GuideView.Direction.LEFT_BOTTOM
+            4 -> GuideView.Direction.SIGN_CENTER_BOTTON
             else -> GuideView.Direction.LEFT_TOP
         }
 

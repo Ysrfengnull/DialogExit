@@ -287,6 +287,9 @@ public class GuideView extends RelativeLayout implements ViewTreeObserver.OnGlob
                     case RIGHT_BOTTOM:
                         guideViewParams.setMargins(right +offsetX, bottom + offsetY, -right - offsetX, -top - offsetY);
                         break;
+                    case SIGN_CENTER_BOTTON:
+                        guideViewParams.setMargins(right/2+offsetX , bottom + offsetY, -right- offsetX , -top - offsetY);
+                        break;
                         default:
                 }
             } else {
@@ -325,7 +328,7 @@ public class GuideView extends RelativeLayout implements ViewTreeObserver.OnGlob
             int x = size[0];
             int y = size[1];
 
-            return (int) (Math.sqrt(x * x + y * y) / 2);
+            return (int) (Math.sqrt(x * x + y * y) / 2.5);
         }
         return -1;
     }
@@ -399,6 +402,7 @@ public class GuideView extends RelativeLayout implements ViewTreeObserver.OnGlob
                     oval.bottom = center[1] + 50;                                //下边
                     temp.drawRoundRect(oval, radius, radius, mCirclePaint);                   //绘制圆角矩形
                     break;
+                    default:
             }
         } else {
             temp.drawCircle(center[0], center[1], radius, mCirclePaint);//绘制圆形
@@ -465,7 +469,7 @@ public class GuideView extends RelativeLayout implements ViewTreeObserver.OnGlob
     public enum Direction {
         LEFT, TOP, RIGHT, BOTTOM,
         LEFT_TOP, LEFT_BOTTOM,
-        RIGHT_TOP, RIGHT_BOTTOM
+        RIGHT_TOP, RIGHT_BOTTOM,SIGN_CENTER_BOTTON
     }
 
     /**
