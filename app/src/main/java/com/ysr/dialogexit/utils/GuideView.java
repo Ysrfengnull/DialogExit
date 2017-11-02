@@ -21,7 +21,11 @@ import com.ysr.dialogexit.R;
 import java.util.List;
 
 /**
- * Created by zhouweixian on 2016/1/23.
+ * 浮层工具类
+ *
+ * @author ysr
+ * @data 2017/11/2 9:46.
+ * 邮箱 yangshirong@log56.com
  */
 public class GuideView extends RelativeLayout implements ViewTreeObserver.OnGlobalLayoutListener {
     private final String TAG = getClass().getSimpleName();
@@ -185,8 +189,9 @@ public class GuideView extends RelativeLayout implements ViewTreeObserver.OnGlob
     }
 
     private boolean hasShown() {
-        if (targetView == null)
+        if (targetView == null) {
             return true;
+        }
         return mContent.getSharedPreferences(TAG, Context.MODE_PRIVATE).getBoolean(generateUniqId(targetView), false);
     }
 

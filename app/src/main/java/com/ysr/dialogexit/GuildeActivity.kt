@@ -29,24 +29,29 @@ class GuildeActivity : AppCompatActivity() {
         iv.setImageResource(getTypeImage(type))
         val params = RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         iv.layoutParams = params
+        //也可以是一个布局
+//        val view = LayoutInflater.from(this).inflate(R.layout.guide_post_article, null)
         guideView = GuideView.Builder
                 .newInstance(this)
                 .setTargetView(getTypeView(type))//设置目标
                 .setCustomGuideView(iv)
                 .setDirction(getTypeDirection(type))
                 .setShape(GuideView.MyShape.CIRCULAR)   // 设置圆形显示区域，
-                .setBgColor(resources.getColor(R.color.shadow))
+                .setBgColor(resources.getColor(R.color.guide_ransparent))
                 .setOnclickListener {
+                    guideView!!.hide()
                     if (type == 4) {
-                        guideView!!.hide()
+
                     } else {
                         var i = type + 1
-                        guideView!!.hide()
                         setGuideView(i)
                     }
                 }
                 .build()
+
         guideView!!.show()
+        guideView!!.showOnce()
+
     }
 
     private fun setGuide(type: Int) {
@@ -102,6 +107,7 @@ class GuildeActivity : AppCompatActivity() {
         }
 
     }
+
     private fun getTypeDirection(type: Int): GuideView.Direction {
         return when (type) {
             1 -> GuideView.Direction.LEFT_TOP
