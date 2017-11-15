@@ -12,14 +12,15 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleInstance"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainLookActivity"
             android:theme="@style/DialogAcitivityStyle" />
-        <activity android:name=".GuildeActivity">
+        <activity android:name=".GuildeActivity"></activity>
+        <activity android:name=".AnimationsActivity">
 
         </activity>
-        <activity android:name=".AnimationsActivity">
+        <activity android:name=".FadeInTextViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
