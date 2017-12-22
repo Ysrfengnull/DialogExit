@@ -2,7 +2,6 @@ package com.ysr.dialogexit;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ysr.dialogexit.base.BaseActivity;
 import com.ysr.dialogexit.utils.GuideView2;
 import com.ysr.dialogexit.view.BadgeView;
 
@@ -36,7 +36,7 @@ import pl.droidsonroids.gif.AnimationListener;
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
     protected static final int UI = 100;
     protected static final int UIEND = 101;
     protected static final int PLAYGIF = 102;
