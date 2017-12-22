@@ -12,7 +12,13 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleInstance"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainLookActivity"
             android:theme="@style/DialogAcitivityStyle" />
@@ -21,11 +27,7 @@
 
         </activity>
         <activity android:name=".FadeInTextViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

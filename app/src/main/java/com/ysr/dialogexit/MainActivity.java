@@ -27,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ysr.dialogexit.utils.GuideView2;
 import com.ysr.dialogexit.view.BadgeView;
 
 import java.io.IOException;
@@ -88,6 +89,18 @@ public class MainActivity extends Activity {
         }.start();
 
 
+        TextView iv = new TextView(this);
+        new GuideView2.Builder(this)
+                .setTargetView(tvEnd)    // 必须调用，设置需要Guide的View
+                .setCustomGuideView(iv)  // 必须调用，设置GuideView
+                // 设置GuideView 相对于TargetView的位置，默认在屏幕左上角
+                .setDirction(GuideView2.Direction.LEFT_BOTTOM)
+                .setRadius(32)          // 设置圆形透明区域半径，默认是targetView的显示矩形的半径
+                .setCenter(300, 300)    // 设置圆心，默认是targetView的中心
+                .setOffset(200, 60)     // 设置偏移，一般用于微调GuideView的位置
+                .showOnce()             // 设置首次显示，设置后，显示一次后，不再显示
+                .build()                // 必须调用，Buider模式，返回GuideView实例
+                .show();
     }
 
     Handler handler = new Handler() {
