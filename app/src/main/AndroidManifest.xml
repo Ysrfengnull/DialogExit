@@ -22,11 +22,10 @@
         <activity
             android:name=".MainLookActivity"
             android:theme="@style/DialogAcitivityStyle" />
-        <activity android:name=".GuildeActivity"></activity>
-        <activity android:name=".AnimationsActivity">
-
-        </activity>
-        <activity android:name=".FadeInTextViewActivity">
+        <activity android:name=".GuildeActivity" />
+        <activity android:name=".AnimationsActivity"></activity>
+        <activity android:name=".FadeInTextViewActivity"></activity>
+        <activity android:name=".VoiceActivity">
 
         </activity>
     </application>

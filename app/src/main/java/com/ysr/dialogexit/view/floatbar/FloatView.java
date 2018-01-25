@@ -16,6 +16,7 @@ import android.view.View.OnTouchListener;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.ysr.dialogexit.R;
 import com.ysr.dialogexit.utils.LogUtil;
@@ -47,7 +48,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
     private Context mContext;
 
     private ImageView mIvFloatLogo;
-    private FloatItems mLlFloatMenu;
+    private TextView mLlFloatMenu;
 
     private boolean mIsRight;//logo是否在右边
     private boolean mCanHide;//是否允许隐藏
@@ -82,7 +83,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
                     setMenuVisiable(false);
                     mWmParams.alpha = 0.7f;
                     mWindowManager.updateViewLayout(FloatView.this, mWmParams);
-                    refreshFloatMenu(mIsRight);
+//                    refreshFloatMenu(mIsRight);
                     if(mTimer != null){
                         mTimer.schedule(new TimerTask() {
                             @Override
@@ -238,7 +239,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
         // 从布局文件获取浮动窗口视图
         View rootFloatView = inflater.inflate(R.layout.widget_float_view, null);
         mIvFloatLogo = (ImageView) rootFloatView.findViewById(R.id.pj_float_view_icon_imageView);
-        mLlFloatMenu = (FloatItems) rootFloatView.findViewById(R.id.ll_menu);
+        mLlFloatMenu = (TextView) rootFloatView.findViewById(R.id.ll_menu);
         rootFloatView.setOnTouchListener(this);
         rootFloatView.setOnClickListener(new OnClickListener() {
             @Override
@@ -287,7 +288,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
                 mTouchStartX = event.getX();
                 mTouchStartY = event.getY();
                 mIvFloatLogo.setPadding(0,0,0,0);
-                mIvFloatLogo.setImageResource(R.mipmap.qiandao_fengyunbang_icon);
+                mIvFloatLogo.setImageResource(R.mipmap.icon_help);
                 mWmParams.alpha = 1f;
                 if(isHide){
                     mWmParams.x += mWmParams.x > mScreenWidth/2 ? -240:140;
@@ -309,7 +310,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
                         && delY > 3 ) {
                     //太靠边的时候就不进行放大处理了，以免边界超出屏幕
                     if( mMoveStartX > 15 && mMoveStartX < mScreenWidth-15){
-                        mIvFloatLogo.setImageResource(R.mipmap.qiandao_fengyunbang_icon);
+                        mIvFloatLogo.setImageResource(R.mipmap.icon_help);
                     }
 
                     mDraging = true;
@@ -326,7 +327,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
-                mIvFloatLogo.setImageResource(R.mipmap.qiandao_fengyunbang_icon);
+                mIvFloatLogo.setImageResource(R.mipmap.icon_help);
                 int left = mCurGriRight ? mWmParams.x+mLlFloatMenu.getLayoutParams().width:mWmParams.x;
 
                 if (left >= mScreenWidth / 2-mIvFloatLogo.getWidth()/2) {
@@ -337,7 +338,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
                     mIsRight = false;
                 }
 
-                refreshFloatMenu(mIsRight);
+//                refreshFloatMenu(mIsRight);
                 //3s后透明度设置成0.7， 再3s后缩到边上
                 timerForHide();
                 startAni(mAniType);
@@ -345,7 +346,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
                 mTouchStartX = mTouchStartY = 0;
                 break;
             default:
-                mIvFloatLogo.setImageResource(R.mipmap.qiandao_fengyunbang_icon);
+                mIvFloatLogo.setImageResource(R.mipmap.icon_help);
         }
         return false;
     }
@@ -371,7 +372,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
     public void show() {
         if (getVisibility() != View.VISIBLE) {
             setVisibility(View.VISIBLE);
-                mIvFloatLogo.setImageResource(R.mipmap.qiandao_fengyunbang_icon);
+                mIvFloatLogo.setImageResource(R.mipmap.icon_help);
                 mWmParams.alpha = 1f;
                 mWindowManager.updateViewLayout(this, mWmParams);
                 timerForHide();
@@ -433,7 +434,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
     }
 
 
-    public FloatItems getMenu(){
+    public TextView getMenu(){
         return mLlFloatMenu;
     }
     /**
